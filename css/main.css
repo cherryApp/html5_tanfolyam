@@ -1,0 +1,71 @@
+p, #my-p {
+    color: brown;
+}
+p + span {
+    color: black;
+}
+p#my-p span {
+    color: blue;
+}
+.nested-ul {
+    color: cornflowerblue;
+}
+
+/* Attribútum szelektor. */
+ol[rel='help'] {
+    text-decoration: underline;
+}
+ol[rel='help']:hover {
+    cursor: pointer;
+}
+
+/* HTML szerkesztő. */
+.editor {
+    min-height: 200px;
+    min-width: 500px;
+    box-shadow: 0 0 5px;
+    padding: 10px;
+    background-color: hsla(0, 100%, 54%, 0.47);
+}
+.editor:hover {
+    box-shadow: 0 0 10px #0000FF;
+}
+
+.my-ul li:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+.test-div {
+    background-color: burlywood;
+    border: solid 1px black;
+    height: 100px;
+}
+
+/* Register form. */
+.form-container {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    max-width: 350px;
+    float: none;
+}
+.register-form {
+    padding: 15px;
+    margin: 30px;
+    box-shadow: 0 0 5px;
+}
+.img-circle {
+    max-width: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

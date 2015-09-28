@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.5</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--.nav-collapse -->
+        </div>
+    </nav>
+
+    <!-- Page content. -->
+    <div class="container">
+       
+       <!-- Form row. -->
+       <div class="row">
+          
+           <div class="col-xs-12 form-container">
+               
+            <!-- Feliratkozó űrlap. -->
+            <form class="register-form">
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </span>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+              </div>
+              <div class="clearfix">&nbsp;</div>
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </span>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="row">
+                  <div class="col-xs-12">
+                      <img src="img/profile.jpg" alt="" class="img-circle">
+                  </div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <div class="row">
+                  <div class="col-xs-6">
+                      <button type="button" class="btn btn-warning btn-block">
+                        <span class="glyphicon glyphicon-remove"></span> 
+                        Cancel
+                        </button>
+                  </div>
+                  <div class="col-xs-6">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <span class="glyphicon glyphicon-ok"></span> Submit
+                    </button>
+                  </div>
+              </div>
+            </form>
+                                  
+           </div>
+       
+       </div>
+       <!-- /Form row. -->
+                       
+        <!-- Table row. -->
+        <div class="row">
+            
+            <table class="table table-striped">
+              <caption>Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>        
+        </div>
+        <!-- Table row. -->
+                      
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+                      
+        <!-- Popover. -->
+        <button type="button" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="Popover title" data-trigger="click">Click to toggle popover</button>
+                       
+                        
+    </div>
+    <!-- /Page content. -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- Szkriptek. -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
