@@ -1,0 +1,73 @@
+/* Alert animációja. */
+
+.register-form .alert {
+    position: fixed;
+    left: 15px;
+    top: 2000px;
+    opacity: 0;
+}
+
+.register-form .alert.show {
+    animation: bottomToTop 5s;
+}
+
+.register-form button[type=submit] {
+    animation: pulse 1s infinite;
+}
+
+
+/* Pulzálás. */
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 1px red;
+    }
+    50% {
+        box-shadow: 0 0 7px red;
+    }
+    100% {
+        box-shadow: 0 0 1px red;
+    }
+}
+
+
+/* Bottom to top. */
+
+@keyframes bottomToTop {
+    0% {
+        top: 2000px;
+        left: 15px;
+    }
+    15% {
+        top: 100px;
+        opacity: 1;
+    }
+    85% {
+        top: 100px;
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+
+/* Left majd top. */
+
+@keyframes leftThenTop {
+    0% {
+        left: -200px;
+        top: 200px;
+    }
+    50% {
+        left: 15px;
+        top: 200px;
+    }
+    100% {
+        top: 50px;
+    }
+}
