@@ -99,3 +99,12 @@ ol[rel='help']:hover {
     visibility: hidden;
     position: absolute;
 }
+
+
+/* Térkép. */
+
+#map {
+    width: 640px;
+    height: 480px;
+    box-shadow: 0 0 5px;
+}
