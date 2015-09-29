@@ -14,3 +14,6 @@ function testFunc2() {
 
 // A regiszter form validálása.
 var regValidator = new validator(".register-form");
+
+// Profikép kezelése.
+var profileImg = new profileImgHandler(".profile-image-holder");
