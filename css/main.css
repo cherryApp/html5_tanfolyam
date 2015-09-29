@@ -52,6 +52,19 @@ ol[rel='help']:hover {
 }
 
 
+/* Lábléc. */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 30px;
+    background-color: #3E230F;
+    color: white;
+}
+
+
 /* Register form. */
 
 .form-container {
@@ -107,4 +120,22 @@ ol[rel='help']:hover {
     width: 640px;
     height: 480px;
     box-shadow: 0 0 5px;
+    margin: 0 auto;
+}
+
+
+/* Média. */
+
+.media-handler audio {
+    display: none;
+}
+
+.media-handler span.inactive,
+.media-handler span.active {
+    display: none;
+}
+
+.media-handler button.inactive span.inactive,
+.media-handler button.active span.active {
+    display: inline;
 }
