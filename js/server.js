@@ -1,5 +1,6 @@
 var http = require('http'),
-    qs = require('querystring');
+    qs = require('querystring'),
+    fs = require('fs');
 
 // Process server data.
 function processData(data) {
@@ -16,6 +17,8 @@ http.createServer(function (req, res) {
 
         var post = JSON.parse(body);
         console.log(post);
+
+        fs.writeFileSync('json/user.json', body);
 
         res.writeHead(200, {
             'Content-Type': 'text/plain',
