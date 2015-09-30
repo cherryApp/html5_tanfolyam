@@ -3,12 +3,29 @@ var http = require('http'),
     fs = require('fs');
 
 // Process server data.
-function processData(data) {
-    return qs.parse(data);
+function processGetRequest(req, res) {
+
+    console.log(req.url);
+
+    res.writeHead(200, {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*'
+    });
+
+    // Kiolvassuk a fájl tartalmát.
+    var contents = fs.readFileSync('json/user.json').toString();
+    res.end(contents);
+
 }
 
 http.createServer(function (req, res) {
 
+    // Get request.
+    if (req.method === "GET") {
+        return processGetRequest(req, res);
+    }
+
+    // Post request.
     var body = '';
     req.on('data', function (data) {
         body += data;
@@ -16,9 +33,9 @@ http.createServer(function (req, res) {
     req.on('end', function () {
 
         var post = JSON.parse(body);
-        console.log(post);
+        // console.log(post);
 
-        fs.writeFileSync('json/user.json', body);
+        fs.writeFileSync('json/user.json', JSON.stringify(post.data));
 
         res.writeHead(200, {
             'Content-Type': 'text/plain',

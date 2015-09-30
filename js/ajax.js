@@ -10,6 +10,9 @@ var formHandler = function (form_selector) {
         // Beviteli mezők.
         this.inputs = this.form.querySelectorAll("input");
 
+        // Lekérés gomb.
+        this.getBtn = this.form.querySelector(".get-data-btn");
+
         // Események.
         this.setEvents();
 
@@ -26,7 +29,12 @@ var formHandler = function (form_selector) {
             event.preventDefault();
             self.getFormData(self.processSubmit);
             // self.processSubmit();
-        });
+        }, false);
+
+        // Lekérés.
+        this.getBtn.addEventListener("click", function () {
+            self.getServerData.call(self)
+        }, false);
 
     };
 
@@ -121,6 +129,49 @@ var formHandler = function (form_selector) {
             "data": datas
         };
         xhr.send(JSON.stringify(obj));
+
+    };
+
+    // Adatok lekérése a szerverről.
+    this.getServerData = function () {
+
+        var myObj = this;
+
+        // Új XMLHttpRequest objektum.
+        var xhr = new XMLHttpRequest();
+
+        // Válsz feldolgozása.
+        function processRequest() {
+            myObj.fillFormData(this.responseText);
+        }
+
+        // Válasz figyelése.
+        xhr.addEventListener("load", processRequest);
+        xhr.open("GET", this.form.getAttribute("data-target") + "/user");
+        xhr.send();
+    };
+
+    // Adatok kitöltése.
+    this.fillFormData = function (datas) {
+
+        datas = JSON.parse(datas);
+
+        // Az összes mező kitöltése.
+        for (var i = 0; i < this.inputs.length; i++) {
+
+            // Egyszerű beviteli mező.
+            var name = this.inputs[i].name;
+            if (this.inputs[i].type.toLowerCase() !== "file") {
+                if (datas[name]) {
+                    this.inputs[i].value = datas[name];
+                }
+            } else {
+                if (datas[name]) {
+                    this.inputs[i].parentNode.querySelector("img").src = datas[name];
+                }
+            }
+
+        }
 
     };
 
