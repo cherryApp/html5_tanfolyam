@@ -22,6 +22,7 @@
     </style>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
 
     <!--[if IE]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -55,13 +56,125 @@
 
     <div class="container">
         <div class="starter-template">
-            <h1>Hello, world!</h1>
-            <p class="lead">Now you can start your own project with <a target="_blank" href="http://getbootstrap.com/">Bootstrap 3.3.5</a>. This plugin is a fork from <a href="https://github.com/le717/brackets-html-skeleton#readme">HTML Skeleton</a>.</p>
+            <h1>Feliratkozás</h1>
+
+            <!-- Form row. -->
+            <div class="row">
+
+                <div class="col-xs-12 form-container">
+
+                    <!-- Feliratkozó űrlap. -->
+                    <form class="register-form" data-method="addUser" data-target="http://127.0.0.1:1337" novalidate>
+
+                        <!-- Név. -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </span>
+                            <input pattern="([.]*){6,}$" type="text" class="form-control" placeholder="Teljes név" data-error-message="Nem megfelelő név!" name="fullname">
+                        </div>
+                        <!-- /Név. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <!-- Email. -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            <input pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" type="email" class="form-control" placeholder="Email" data-error-message="Nem megfelelő email cím!" name="email">
+                        </div>
+                        <!-- Email. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <!-- Szül idő. -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            <input type="date" class="form-control" placeholder="született" data-error-message="Nem megfelelő születési idő!" name="birthdate">
+                        </div>
+                        <!-- Szül idő. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <!-- Telefon. -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </span>
+                            <input pattern="[\+0-9]{11,12}" type="text" class="form-control" placeholder="telefon" data-error-message="Nem megfelelő telefonszám forátum!" name="phone">
+                        </div>
+                        <!-- Telefon. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <!-- Jelszó. -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                            </span>
+                            <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <!-- Jelszó. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <!-- Profilkép. -->
+                        <div class="row">
+                            <div class="col-xs-12 profile-image-holder">
+                                <label for="profile-img">
+                                    <img src="img/profile.jpg" alt="" class="img-circle">
+                                </label>
+                                <input name="profile_image" id="profile-img" type="file">
+                            </div>
+                        </div>
+                        <!-- /Profilkép. -->
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-warning btn-block">
+                                    <span class="glyphicon glyphicon-remove"></span> mégsem
+                                </button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="submit" class="btn btn-success btn-block">
+                                    <span class="glyphicon glyphicon-ok"></span> küldés
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="clearfix">&nbsp;</div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Sikeres küldés!</strong>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <!-- /Form row. -->
+
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/profile-image.js"></script>
     <script src="js/ajax.js"></script>
 </body>
 

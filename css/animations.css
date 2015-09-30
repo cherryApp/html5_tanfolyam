@@ -12,7 +12,7 @@
 }
 
 .register-form button[type=submit] {
-    animation: pulse 1s infinite;
+    /* animation: pulse 1s infinite; */
 }
 
 

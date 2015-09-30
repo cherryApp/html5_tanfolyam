@@ -13,15 +13,18 @@ http.createServer(function (req, res) {
         body += data;
     });
     req.on('end', function () {
+
         var post = JSON.parse(body);
         console.log(post);
+
+        res.writeHead(200, {
+            'Content-Type': 'text/plain',
+            'Access-Control-Allow-Origin': '*'
+        });
+        res.end('Kapott adatok: ' + JSON.stringify(post));
+
     });
 
-    res.writeHead(200, {
-        'Content-Type': 'text/plain',
-        'Access-Control-Allow-Origin': '*'
-    });
-    res.end('Hello World\n');
 
 }).listen(1337, "127.0.0.1");
 
