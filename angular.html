@@ -33,7 +33,12 @@
 
     <ng-include src="'pages/nav.html'"></ng-include>
 
+    <div class="row" style="float: none; text-align: center; margin: 30px 0">
+        <canvas id="myCanvas" width="200px" height="100px" style="border: 1px solid black"></canvas>
+    </div>
+
     <div class="container" data-ng-controller="leadCtrl" data-ng-include="'pages/register-form.html'"></div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -41,6 +46,8 @@
     <script src="js/profile-image.js"></script>
     <script src="js/angular/main.js"></script>
     <script src="js/angular/leadCtrl.js"></script>
+    <script src="js/angular/currencyFilter.js"></script>
+    <script src="js/angular/inputDirective.js"></script>
 
 </body>
 

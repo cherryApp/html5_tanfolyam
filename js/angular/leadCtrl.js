@@ -8,6 +8,22 @@ testModule.controller("leadCtrl", ["$http", "$scope", "$timeout", function ($htt
 
     $scope.inputText = "";
 
+    // Beviteli mezők.
+    $scope.allFields = [
+        {
+            "type": "text",
+            "placeholder": "egyenleg"
+        },
+        {
+            "type": "text",
+            "placeholder": "anyós"
+        },
+        {
+            "type": "text",
+            "placeholder": "kecske"
+        }
+    ];
+
     // Üdvözlés.
     $scope.greeting = function () {
         return $scope.inputText === "" ? "" : "Szia " + $scope.inputText + "!";
@@ -16,11 +32,9 @@ testModule.controller("leadCtrl", ["$http", "$scope", "$timeout", function ($htt
     // User adatok lekérése.
     $scope.getUser = function () {
 
-        console.log("getUser");
-
         $http.get("http://127.0.0.1:1337")
             .success(function (d) {
-                console.log("User: ", d);
+                // console.log("User: ", d);
                 $scope.user = d;
             })
             .error(function (d) {

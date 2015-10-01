@@ -61,6 +61,11 @@
             </div>
             <!-- Jelszó. -->
 
+            <!-- Egyenleg. -->
+            <form-input data-ng-repeat="field in allFields" type="{{ field.type }}" data-ng-model="user.egyenleg" data-icon="glyphicon glyphicon-gift" placeholder="{{ field.placeholder }}"></form-input>
+            <div>{{ user.egyenleg | currencyFilter }}</div>
+            <!-- Egyenleg. -->
+
             <div class="clearfix">&nbsp;</div>
 
             <!-- Profilkép. -->

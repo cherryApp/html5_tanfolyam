@@ -1,2 +1,2 @@
 // Új angular modul.
-var testModule = angular.module("testModule", []);
+var testModule = angular.module("testModule", ["currencyModule"]);
