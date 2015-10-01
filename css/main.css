@@ -15,6 +15,10 @@ p#my-p span {
     color: cornflowerblue;
 }
 
+.container h1 {
+    text-align: center;
+}
+
 
 /* Attribútum szelektor. */
 

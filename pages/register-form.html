@@ -1,0 +1,112 @@
+<h1>Feliratkozás</h1>
+
+<!-- Form row. -->
+<div class="row">
+
+    <div class="col-xs-12 form-container">
+
+        <!-- Feliratkozó űrlap. -->
+        <form class="register-form" data-method="addUser" data-target="http://127.0.0.1:1337">
+
+            <!-- Név. -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="Teljes név" data-error-message="Nem megfelelő név!" name="fullname" data-ng-model="user.fullname">
+            </div>
+            <!-- /Név. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <!-- Email. -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                </span>
+                <input type="email" class="form-control" placeholder="Email" data-error-message="Nem megfelelő email cím!" name="email" data-ng-model="user.email">
+            </div>
+            <!-- Email. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <!-- Szül idő. -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="született" data-error-message="Nem megfelelő születési idő!" name="birthdate" data-ng-model="user.birthdate">
+            </div>
+            <!-- Szül idő. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <!-- Telefon. -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                </span>
+                <input type="text" class="form-control" placeholder="telefon" data-error-message="Nem megfelelő telefonszám forátum!" name="phone" data-ng-model="user.phone">
+            </div>
+            <!-- Telefon. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <!-- Jelszó. -->
+            <div class="input-group">
+                <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                </span>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <!-- Jelszó. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <!-- Profilkép. -->
+            <div class="row">
+                <div class="col-xs-12 profile-image-holder">
+                    <label for="profile-img">
+                        <img data-ng-src="{{ user.profile_image }}" alt="" class="img-circle">
+                    </label>
+                    <input name="profile_image" id="profile-img" type="file">
+                </div>
+            </div>
+            <!-- /Profilkép. -->
+
+            <div class="clearfix">&nbsp;</div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-warning btn-block get-data-btn" data-ng-click="getUser()">
+                        <span class="glyphicon glyphicon-cloud-download"></span> lekérés
+                    </button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-success btn-block" data-ng-click="postUser()">
+                        <span class="glyphicon glyphicon-ok"></span> küldés
+                    </button>
+                </div>
+            </div>
+
+            <div class="clearfix">&nbsp;</div>
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Sikeres küldés!</strong>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- /Form row. -->

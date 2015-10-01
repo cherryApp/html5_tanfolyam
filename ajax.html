@@ -169,11 +169,29 @@
             </div>
             <!-- /Form row. -->
 
+            <!-- Socket. -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control socket-source" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary socket-start-btn" onclick="writeSocket()">
+                                küldés
+                            </button>                            
+                        </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+            </div>
+            <!-- Socket. -->
+
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="js/socket.client.js"></script>
     <script src="js/profile-image.js"></script>
     <script src="js/ajax.js"></script>
 </body>

@@ -33,7 +33,7 @@ var formHandler = function (form_selector) {
 
         // Lekérés.
         this.getBtn.addEventListener("click", function () {
-            self.getServerData.call(self)
+            self.getServerData.call(self);
         }, false);
 
     };
@@ -44,18 +44,19 @@ var formHandler = function (form_selector) {
 
         var datas = {},
             fileInputs = [],
-            self = this;
+            self = this,
+            i = 0;
 
         // Egyszerű inputok feldolgozása.
-        for (var i = 0; i < this.inputs.length; i++) {
+        for (i = 0; i < this.inputs.length; i++) {
 
             if (this.inputs[i].type.toLowerCase() === "file") {
                 fileInputs.push(this.inputs[i]);
                 continue;
             }
 
-            var name = this.inputs[i].name;
-            var value = this.inputs[i].value;
+            var name = this.inputs[i].name,
+                value = this.inputs[i].value;
             datas[name] = value;
 
         }
@@ -155,6 +156,7 @@ var formHandler = function (form_selector) {
     this.fillFormData = function (datas) {
 
         datas = JSON.parse(datas);
+        // console.log(datas);
 
         // Az összes mező kitöltése.
         for (var i = 0; i < this.inputs.length; i++) {
