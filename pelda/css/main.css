@@ -1,0 +1,10 @@
+.calc-div {
+    text-align: center;
+    float: none;
+    max-width: 300px;
+}
+
+.calc-div form {
+    text-align: left;
+    margin: 0 auto;
+}

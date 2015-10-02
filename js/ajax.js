@@ -1,8 +1,15 @@
+// Környezet megállapítása.
+var isWorker = typeof document === "undefined";
+
 // Form kezelő osztály.
 var formHandler = function (form_selector) {
 
     // Const.
     this.construct = function () {
+
+        // Worker környezet.
+        if (isWorker)
+            return;
 
         // Űrlap.
         this.form = document.querySelector(form_selector);
@@ -143,12 +150,17 @@ var formHandler = function (form_selector) {
 
         // Válsz feldolgozása.
         function processRequest() {
-            myObj.fillFormData(this.responseText);
+            if (!isWorker) {
+                myObj.fillFormData(this.responseText);
+            } else {
+                myObj.serverDataGetted(this.responseText);
+            }
         }
 
         // Válasz figyelése.
         xhr.addEventListener("load", processRequest);
-        xhr.open("GET", this.form.getAttribute("data-target") + "/user");
+        var url = isWorker ? this.url : this.form.getAttribute("data-target");
+        xhr.open("GET", url + "/user");
         xhr.send();
     };
 
@@ -181,7 +193,12 @@ var formHandler = function (form_selector) {
 
 }
 
-var form1 = new formHandler(".register-form");
+// Ha worker-ben fut, akkor nem állítjuk be a dom elemeket.
+if (!isWorker) {
 
-// Profikép kezelése.
-var profileImg = new profileImgHandler(".profile-image-holder");
+    var form1 = new formHandler(".register-form");
+
+    // Profikép kezelése.
+    var profileImg = new profileImgHandler(".profile-image-holder");
+
+}
