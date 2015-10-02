@@ -1,4 +1,4 @@
-// Form submit figyelése.
+// Form submit figyelése. Hallo.
 document.querySelector("form")
     .addEventListener("submit", startCalculation, false);
 
